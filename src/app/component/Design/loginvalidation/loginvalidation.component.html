@@ -1,0 +1,55 @@
+<div class="login_page">
+  <form [formGroup]="login">
+    <div class="container lande_page">
+      <div class="row start_page ">
+        <div class="row">
+          <div class="col-lg-12  text-center">
+            <h2>Login</h2>
+          </div>
+        </div>
+        <div class="col-lg-6 page_one">
+          <div class="logo text-center">
+              <img class="swing" src="assets/img/LogoBanner.png" width="65%" >
+          </div>
+        </div>
+        <div class="col-lg-6 page_two">
+          <div class="mt-2 company_name text-center ">
+            <img src="assets/img/dark-logo.png" width="72%">
+          </div>
+          <div class="mt-2 email">
+            <label>Email</label>
+            <input type="email" class="form-control" autocomplete="off" formControlName="Email">
+            <div
+            *ngIf="
+            login.get('Email')?.invalid &&
+              (login.get('Email')?.dirty || login.get('Email')?.touched)">
+            <div class="text-danger" *ngIf="login.get('Email')?.errors?.['required']">Email is required.</div>
+          </div>
+          </div>
+          <div class="mt-2 password">
+            <label>Password</label>
+            <input type="password" class="form-control" autocomplete="off" formControlName="Password">
+            <div
+            *ngIf="
+            login.get('Password')?.invalid &&
+              (login.get('Password')?.dirty || login.get('Password')?.touched)">
+            <div class="text-danger" *ngIf="login.get('Password')?.errors?.['required']">Email is required.</div>
+          </div>
+          </div>
+          <div class="register">
+            <a href="register_validatiuon">Register Now</a>
+          </div>
+          <div class="mt-2">
+            <button type="button"  [disabled]="login!.invalid" class="btn btn-primary">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="custom-shape-divider-bottom-1674115018">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+  </div>
+</div>
+

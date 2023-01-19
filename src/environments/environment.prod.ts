@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  language:"en",
+  baseApi: 'http://192.168.0.32',
+  PrefixApi: 'api',
 };

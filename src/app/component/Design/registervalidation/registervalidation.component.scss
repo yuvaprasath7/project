@@ -1,0 +1,33 @@
+.registervalidation{
+  background: rgb(236, 150, 58);
+  background: linear-gradient(90deg, rgba(236, 150, 58, 1) 0%, rgba(183, 162, 110, 1) 43%, rgba(73, 182, 228, 1) 96%);
+  height: 100vh;
+}
+
+.regiter_page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #CED4DA;
+  outline: unset !important;
+  box-shadow: 0px 2px 6px 0px rgb(0 0 0 / 8%);
+}
+
+.content_page{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+.logo{
+  padding-right: 40px;
+}
+
+
