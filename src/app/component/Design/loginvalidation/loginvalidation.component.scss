@@ -18,7 +18,7 @@ img {
 
 .start_page {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  padding: 50px;
+  padding: 30px;
   background-color: #fff;
   border-radius: 30px;
 }
@@ -30,7 +30,6 @@ img {
   outline: unset !important;
   box-shadow: 0px 2px 6px 0px rgb(0 0 0 / 8%);
 }
-
 
 .custom-shape-divider-bottom-1674115018 {
   position: absolute;
@@ -80,21 +79,23 @@ img {
     display: none;
   }
 
-  img {
-    width: 70% !important;
-  }
+  // img {
+  //   width: 70% !important;
+  // }
 
   .swing {
     margin-left: 22px;
   }
 
+  .waviy {
+    margin-left: 43px;
+  }
 
 }
 
 .swing {
   animation: swing ease-in-out 1s infinite alternate;
   transform-origin: center -1px;
-  float: left;
 }
 
 
@@ -107,4 +108,26 @@ img {
     transform: rotate(-3deg);
   }
 
+}
+
+.waviy {
+  position: relative;
+}
+
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  color: black;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i))
+}
+
+@keyframes flip {
+
+  0%,
+  80% {
+    transform: rotateY(360deg)
+  }
 }
