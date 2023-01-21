@@ -1,5 +1,5 @@
 <div class="login_page">
-  <form  #Form="ngForm">
+  <form #Form="ngForm">
     <div class="container lande_page">
       <div class="row start_page ">
         <div class="row">
@@ -10,12 +10,12 @@
               <span style="--i:3">g</span>
               <span style="--i:4">i</span>
               <span style="--i:5">n</span>
-             </div>
+            </div>
           </div>
         </div>
         <div class="col-lg-6 col-sm-12 col-lg-md-6 page_one">
           <div class="logo text-center">
-              <img class="swing mt-4" src="assets/img/LogoBanner.png" width="50%" >
+            <img class="swing mt-4" src="assets/img/LogoBanner.png" width="50%">
           </div>
         </div>
         <div class="col-lg-6 page_two">
@@ -27,10 +27,14 @@
               <span class="text-danger">*&nbsp;</span>Email
             </label>
             <input type="text" class="form-control " autocomplete="off" name="Email" #Email="ngModel"
-              [(ngModel)]="model.Email" required [ngClass]="!Email.valid && (Email.touched || Email.dirty)?'is-invalid':''">
+              pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="model.Email" required
+              [ngClass]="!Email.valid && (Email.touched || Email.dirty)?'is-invalid':''">
             <div *ngIf="!Email.valid && (Email.touched || Email.dirty)">
               <div class="text-danger" *ngIf="Email.errors?.['required']">
                 Email is required
+              </div>
+              <div class="text-danger" *ngIf="Email.errors?.['pattern']">
+                Email is Invalid
               </div>
             </div>
           </div>
@@ -39,10 +43,15 @@
               <span class="text-danger">*&nbsp;</span>password
             </label>
             <input type="text" class="form-control " autocomplete="off" name="password" #password="ngModel"
-              [(ngModel)]="model.password" required [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
+            pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,16}$/F"
+              [(ngModel)]="model.password" required
+              [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
             <div *ngIf="!password.valid && (password.touched || password.dirty)">
               <div class="text-danger" *ngIf="password.errors?.['required']">
                 password is required
+              </div>
+              <div class="text-danger" *ngIf="password.errors?.['pattern']">
+                Password more 1 Upper,lower,special charactor,1 numbers
               </div>
             </div>
           </div>
@@ -50,7 +59,7 @@
             <a href="register_validatiuon">Register Now</a>
           </div>
           <div class="mt-2">
-            <button type="button"  class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-primary">Login</button>
           </div>
         </div>
       </div>
@@ -58,8 +67,9 @@
   </form>
   <div class="custom-shape-divider-bottom-1674115018">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      <path
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+        class="shape-fill"></path>
     </svg>
   </div>
 </div>
-

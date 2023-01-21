@@ -12,7 +12,7 @@
             <span style="--i:5">t</span>
             <span style="--i:5">e</span>
             <span style="--i:5">r</span>
-           </div>
+          </div>
         </div>
         <div class="logo text-center">
           <img src="assets/img/dark-logo.png" width="40%">
@@ -23,10 +23,14 @@
               <span class="text-danger">*&nbsp;</span>Name
             </label>
             <input type="text" class="form-control " autocomplete="off" name="Name" #Name="ngModel"
-              [(ngModel)]="model.Name" required [ngClass]="!Name.valid && (Name.touched || Name.dirty)?'is-invalid':''">
+              pattern="^[a-zA-Z]+$" [(ngModel)]="model.Name" required
+              [ngClass]="!Name.valid && (Name.touched || Name.dirty)?'is-invalid':''">
             <div *ngIf="!Name.valid && (Name.touched || Name.dirty)">
               <div class="text-danger" *ngIf="Name.errors?.['required']">
                 Name is required
+              </div>
+              <div class="text-danger" *ngIf="Name.errors?.['pattern']">
+                Letters Only
               </div>
             </div>
           </div>
@@ -35,11 +39,14 @@
               <span class="text-danger">*&nbsp;</span>Email
             </label>
             <input type="text" class="form-control " autocomplete="off" name="Email" #Email="ngModel"
-              [(ngModel)]="model.Email" required
+              [(ngModel)]="model.Email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               [ngClass]="!Email.valid && (Email.touched || Email.dirty)?'is-invalid':''">
             <div *ngIf="!Email.valid && (Email.touched || Email.dirty)">
               <div class="text-danger" *ngIf="Email.errors?.['required']">
                 Email is required
+              </div>
+              <div class="text-danger" *ngIf="Email.errors?.['pattern']">
+                Email is Invalid
               </div>
             </div>
           </div>
@@ -48,11 +55,14 @@
               <span class="text-danger">*&nbsp;</span>PhoneNumber
             </label>
             <input type="text" class="form-control " autocomplete="off" name="PhoneNumber" #PhoneNumber="ngModel"
-              [(ngModel)]="model.PhoneNumber" required
+              [(ngModel)]="model.PhoneNumber" required pattern="^((\\+91-?)|0)?[0-9]{10}$"
               [ngClass]="!PhoneNumber.valid && (PhoneNumber.touched || PhoneNumber.dirty)?'is-invalid':''">
             <div *ngIf="!PhoneNumber.valid && (PhoneNumber.touched || PhoneNumber.dirty)">
               <div class="text-danger" *ngIf="PhoneNumber.errors?.['required']">
                 PhoneNumber is required
+              </div>
+              <div class="text-danger" *ngIf="PhoneNumber.errors?.['pattern']">
+                Phonenumber is not 10 digit
               </div>
             </div>
           </div>
@@ -63,10 +73,14 @@
               <span class="text-danger">*&nbsp;</span>Age
             </label>
             <input type="text" class="form-control " autocomplete="off" name="Age" #Age="ngModel"
-              [(ngModel)]="model.Age" required [ngClass]="!Age.valid && (Age.touched || Age.dirty)?'is-invalid':''">
+              pattern="([1-9]{1,2}[0]?|100)" [(ngModel)]="model.Age" required
+              [ngClass]="!Age.valid && (Age.touched || Age.dirty)?'is-invalid':''">
             <div *ngIf="!Age.valid && (Age.touched || Age.dirty)">
               <div class="text-danger" *ngIf="Age.errors?.['required']">
                 Age is required
+              </div>
+              <div class="text-danger" *ngIf="Age.errors?.['pattern']">
+                Numbers Only and Age Formate
               </div>
             </div>
           </div>
@@ -74,12 +88,14 @@
             <label [ngClass]="!password.valid && (password.touched || password.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>password
             </label>
-            <input type="text" class="form-control " autocomplete="off" name="password" #password="ngModel"
-              [(ngModel)]="model.password" required
-              [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
+            <input type="text" class="form-control " autocomplete="off" name="password" #password="ngModel" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,16}$/" [(ngModel)]="model.password"
+              required [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
             <div *ngIf="!password.valid && (password.touched || password.dirty)">
               <div class="text-danger" *ngIf="password.errors?.['required']">
                 password is required
+              </div>
+              <div class="text-danger" *ngIf="password.errors?.['pattern']">
+              pass
               </div>
             </div>
           </div>
