@@ -18,7 +18,7 @@
           <img src="assets/img/dark-logo.png" width="40%">
         </div>
         <div class="col-lg-6 col-sm-12 col-lg-md-6">
-          <div class="">
+          <div class="mt-2">
             <label [ngClass]="!Name.valid && (Name.touched || Name.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>Name
             </label>
@@ -34,7 +34,7 @@
               </div>
             </div>
           </div>
-          <div class="">
+          <div class="mt-2">
             <label [ngClass]="!Email.valid && (Email.touched || Email.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>Email
             </label>
@@ -50,7 +50,7 @@
               </div>
             </div>
           </div>
-          <div class="">
+          <div class="mt-2">
             <label [ngClass]="!PhoneNumber.valid && (PhoneNumber.touched || PhoneNumber.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>PhoneNumber
             </label>
@@ -68,7 +68,7 @@
           </div>
         </div>
         <div class="col-lg-6 col-sm-12 col-lg-md-6">
-          <div class="">
+          <div class="mt-2">
             <label [ngClass]="!Age.valid && (Age.touched || Age.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>Age
             </label>
@@ -84,22 +84,23 @@
               </div>
             </div>
           </div>
-          <div class="">
+          <div class="mt-2">
             <label [ngClass]="!password.valid && (password.touched || password.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>password
             </label>
-            <input type="text" class="form-control " autocomplete="off" name="password" #password="ngModel" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,16}$/" [(ngModel)]="model.password"
+            <input type="text" class="form-control " autocomplete="off" name="password" #password="ngModel"
+              pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" [(ngModel)]="model.password"
               required [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
             <div *ngIf="!password.valid && (password.touched || password.dirty)">
               <div class="text-danger" *ngIf="password.errors?.['required']">
                 password is required
               </div>
               <div class="text-danger" *ngIf="password.errors?.['pattern']">
-              pass
+                1 Upper,lower,special charactor,1 number
               </div>
             </div>
           </div>
-          <div class="">
+          <div class="mt-2">
             <label
               [ngClass]="!ConfiromPassword.valid && (ConfiromPassword.touched || ConfiromPassword.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>ConfiromPassword
