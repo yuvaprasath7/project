@@ -1,5 +1,5 @@
 <div class="registervalidation">
-  <form #Form="ngForm">
+  <form #Form="ngForm" [mustMatch]="['password', 'ConfirmPassword']">
     <div class="container regiter_page">
       <div class="row content_page">
         <div class="text-center">
@@ -23,7 +23,7 @@
               <span class="text-danger">*&nbsp;</span>Name
             </label>
             <input type="text" class="form-control " autocomplete="off" name="Name" #Name="ngModel"
-              pattern="^[a-zA-Z]+$" minlength="15" [(ngModel)]="model.Name" required
+              pattern="^[a-zA-Z]+$" minlength="8" [(ngModel)]="model.Name" required
               [ngClass]="!Name.valid && (Name.touched || Name.dirty)?'is-invalid':''">
             <div *ngIf="!Name.valid && (Name.touched || Name.dirty)">
               <div class="text-danger" *ngIf="Name.errors?.['required']">
@@ -91,9 +91,10 @@
             <label [ngClass]="!password.valid && (password.touched || password.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>password
             </label>
-            <input type="text" class="form-control" autocomplete="off" name="password" #password="ngModel"
-              pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" [(ngModel)]="model.password"
-              required [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
+            <input type="password" class="form-control" autocomplete="off" name="password" #password="ngModel"
+              pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,16}"
+              [(ngModel)]="model.password" required
+              [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
             <div *ngIf="!password.valid && (password.touched || password.dirty)">
               <div class="text-danger" *ngIf="password.errors?.['required']">
                 password is required
@@ -104,18 +105,17 @@
             </div>
           </div>
           <div class="mt-2">
-            <label [ngClass]="!ConfirmPassword.valid && (ConfirmPassword.touched || ConfirmPassword.dirty)?'text-danger':''">
-              <span class="text-danger">*&nbsp;</span>Confirm Password
+            <label [ngClass]="!DateOfBirth.valid && (DateOfBirth.touched || DateOfBirth.dirty)?'text-danger':''">
+              <span class="text-danger">*&nbsp;</span> Date Of Birth
             </label>
-              <input type="password" name="ConfirmPassword" class="form-control" name="ConfirmPassword" #ConfirmPassword="ngModel"
-                [(ngModel)]="model.ConfirmPassword" minlength="8"
-                [class.is-valid]="ConfirmPassword.valid && (ConfirmPassword.dirty || ConfirmPassword.touched)" required>
-              <div *ngIf="ConfirmPassword.errors && (ConfirmPassword.dirty || ConfirmPassword.touched)">
-                <div class="text-danger" *ngIf="ConfirmPassword.errors['required']">ConfirmPassword  is required</div>
-                <div *ngIf="ConfirmPassword.errors['matching']">
-                  ConfirmPassword  does not match
-                </div>
-              </div>
+            <input type="date" class="form-control " autocomplete="off" name="DateOfBirth" #DateOfBirth="ngModel"
+            [(ngModel)]="model.DateOfBirth" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            [ngClass]="!DateOfBirth.valid && (DateOfBirth.touched || DateOfBirth.dirty)?'is-invalid':''">
+          <div *ngIf="!DateOfBirth.valid && (DateOfBirth.touched || DateOfBirth.dirty)">
+            <div class="text-danger" *ngIf="DateOfBirth.errors?.['required']">
+              Date Of Birth is required
+            </div>
+          </div>
           </div>
         </div>
         <div class="row">
