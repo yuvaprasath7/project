@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './helpers/auth.guard';
 import { LoginvalidationComponent } from './component/Design/loginvalidation/loginvalidation.component';
 import { RegistervalidationComponent } from './component/Design/registervalidation/registervalidation.component';
+import { PasswordmatachDirective } from './helpers/passwordmatach.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RegistervalidationComponent } from './component/Design/registervalidati
     DashboardComponent,
     LoginComponent,
     LoginvalidationComponent,
-    RegistervalidationComponent
+    RegistervalidationComponent,
+    PasswordmatachDirective
   ],
   imports: [
     BrowserModule,

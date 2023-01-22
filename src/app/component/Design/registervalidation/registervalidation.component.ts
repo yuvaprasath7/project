@@ -7,6 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./registervalidation.component.scss']
 })
 export class RegistervalidationComponent implements OnInit {
+  genders = ['male', 'female'];
 
   model: any = {};
   constructor() {
