@@ -17,7 +17,7 @@
         <div class="logo text-center">
           <img src="assets/img/dark-logo.png" width="40%">
         </div>
-        <div class="col-lg-6 col-sm-12 col-lg-md-6">
+        <div class="col-lg-6 col-sm-12">
           <div class="mt-2">
             <label [ngClass]="!Name.valid && (Name.touched || Name.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>Name
@@ -26,15 +26,15 @@
               pattern="^[a-zA-Z]+$" minlength="8" [(ngModel)]="model.Name" required
               [ngClass]="!Name.valid && (Name.touched || Name.dirty)?'is-invalid':''">
             <div *ngIf="!Name.valid && (Name.touched || Name.dirty)">
-              <div class="text-danger" *ngIf="Name.errors?.['required']">
+              <small class="text-danger" *ngIf="Name.errors?.['required']">
                 Name is required
-              </div>
-              <div class="text-danger" *ngIf="Name.errors?.['minlength']">
+              </small>
+              <small class="text-danger" *ngIf="Name.errors?.['minlength']">
                 Name least 8 characters long
-              </div>
-              <div class="text-danger" *ngIf="Name.errors?.['pattern']">
+              </small>
+              <small class="text-danger" *ngIf="Name.errors?.['pattern']">
                 Letters Only
-              </div>
+              </small>
             </div>
           </div>
           <div class="mt-2">
@@ -45,12 +45,12 @@
               pattern="([1-9]{1,2}[0]?|100)" [(ngModel)]="model.Age" required
               [ngClass]="!Age.valid && (Age.touched || Age.dirty)?'is-invalid':''">
             <div *ngIf="!Age.valid && (Age.touched || Age.dirty)">
-              <div class="text-danger" *ngIf="Age.errors?.['required']">
+              <small class="text-danger" *ngIf="Age.errors?.['required']">
                 Age is required
-              </div>
-              <div class="text-danger" *ngIf="Age.errors?.['pattern']">
+              </small>
+              <small class="text-danger" *ngIf="Age.errors?.['pattern']">
                 Numbers Only and Age Formate
-              </div>
+              </small>
             </div>
           </div>
           <div class="mt-2">
@@ -61,16 +61,16 @@
               [(ngModel)]="model.PhoneNumber" required pattern="^((\\+91-?)|0)?[0-9]{10}$"
               [ngClass]="!PhoneNumber.valid && (PhoneNumber.touched || PhoneNumber.dirty)?'is-invalid':''">
             <div *ngIf="!PhoneNumber.valid && (PhoneNumber.touched || PhoneNumber.dirty)">
-              <div class="text-danger" *ngIf="PhoneNumber.errors?.['required']">
+              <small class="text-danger" *ngIf="PhoneNumber.errors?.['required']">
                 PhoneNumber is required
-              </div>
-              <div class="text-danger" *ngIf="PhoneNumber.errors?.['pattern']">
+              </small>
+              <small class="text-danger" *ngIf="PhoneNumber.errors?.['pattern']">
                 Phonenumber is not 10 digit
-              </div>
+              </small>
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-sm-12 col-lg-md-6">
+        <div class="col-lg-6 col-sm-12 ">
           <div class="mt-2">
             <label [ngClass]="!Email.valid && (Email.touched || Email.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>Email
@@ -79,12 +79,12 @@
               [(ngModel)]="model.Email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               [ngClass]="!Email.valid && (Email.touched || Email.dirty)?'is-invalid':''">
             <div *ngIf="!Email.valid && (Email.touched || Email.dirty)">
-              <div class="text-danger" *ngIf="Email.errors?.['required']">
+              <small class="text-danger" *ngIf="Email.errors?.['required']">
                 Email is required
-              </div>
-              <div class="text-danger" *ngIf="Email.errors?.['pattern']">
+              </small>
+              <small class="text-danger" *ngIf="Email.errors?.['pattern']">
                 Email is Invalid
-              </div>
+              </small>
             </div>
           </div>
           <div class="mt-2">
@@ -95,14 +95,14 @@
               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,16}"
               [(ngModel)]="model.password" required
               [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
-            <div *ngIf="!password.valid && (password.touched || password.dirty)">
-              <div class="text-danger" *ngIf="password.errors?.['required']">
+            <small *ngIf="!password.valid && (password.touched || password.dirty)">
+              <small class="text-danger" *ngIf="password.errors?.['required']">
                 password is required
-              </div>
-              <div class="text-danger" *ngIf="password.errors?.['pattern']">
+              </small>
+              <small class="text-danger" *ngIf="password.errors?.['pattern']">
                 1 Upper,lower,special charactor,1 number
-              </div>
-            </div>
+              </small>
+            </small>
           </div>
           <div class="mt-2">
             <label [ngClass]="!DateOfBirth.valid && (DateOfBirth.touched || DateOfBirth.dirty)?'text-danger':''">
@@ -111,11 +111,11 @@
             <input type="date" class="form-control " autocomplete="off" name="DateOfBirth" #DateOfBirth="ngModel"
             [(ngModel)]="model.DateOfBirth" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             [ngClass]="!DateOfBirth.valid && (DateOfBirth.touched || DateOfBirth.dirty)?'is-invalid':''">
-          <div *ngIf="!DateOfBirth.valid && (DateOfBirth.touched || DateOfBirth.dirty)">
-            <div class="text-danger" *ngIf="DateOfBirth.errors?.['required']">
+          <small *ngIf="!DateOfBirth.valid && (DateOfBirth.touched || DateOfBirth.dirty)">
+            <small class="text-danger" *ngIf="DateOfBirth.errors?.['required']">
               Date Of Birth is required
-            </div>
-          </div>
+            </small>
+          </small>
           </div>
         </div>
         <div class="row">

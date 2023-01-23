@@ -1,7 +1,7 @@
 .lande_page {
   display: grid;
   place-items: center;
-  height: 97vh;
+  height: 81vh;
 }
 
 .login_page {
@@ -73,6 +73,7 @@ img {
 
   .start_page {
     width: inherit;
+    margin-top: 47px;
   }
 
   .custom-shape-divider-bottom-1674115018 {
@@ -131,3 +132,16 @@ img {
     transform: rotateY(360deg)
   }
 }
+
+.another_tab{
+  display: flex;
+  justify-content: space-between;
+}
+.register{
+  text-decoration: none;
+}
+.Forget{
+  text-decoration: none;
+}
+
+
