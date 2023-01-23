@@ -64,6 +64,10 @@
     padding-top: 10px;
   }
 
+  .eyeicone {
+    margin: 2% -39%;
+  }
+
   .content_page {
     width: inherit;
     height: 115vh;
@@ -98,4 +102,16 @@
   80% {
     transform: rotateY(360deg)
   }
+}
+.hide {
+  display: none;
+}
+.eyeicone {
+  position: absolute !important;
+  top: 70%;
+  right: 52%;
+  font-size: 17px;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  background-image:unset;
 }

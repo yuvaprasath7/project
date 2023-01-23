@@ -28,6 +28,10 @@ img {
   box-shadow: 0px 2px 6px 0px rgb(0 0 0 / 8%);
 }
 
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  background-image:unset;
+}
+
 // .custom-shape-divider-bottom-1674115018 {
 //   position: absolute;
 //   bottom: 0;
@@ -66,8 +70,12 @@ img {
     padding: 9px;
   }
 
-  .lande_page{
-    height:97vh
+  .eyeicone {
+   margin-top: 43px;
+  }
+
+  .lande_page {
+    height: 97vh
   }
 
   .start_page {
@@ -138,4 +146,15 @@ img {
 
 .Forget {
   text-decoration: none;
+}
+
+.hide {
+  display: none;
+}
+
+.eyeicone {
+  position: absolute !important;
+  top: 60%;
+  right: 22%;
+  font-size: 16px;
 }

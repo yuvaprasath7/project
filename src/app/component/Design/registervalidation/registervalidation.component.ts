@@ -8,6 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistervalidationComponent implements OnInit {
   model: any = {};
+  showPassword: boolean =false;
   constructor() {
   }
 
