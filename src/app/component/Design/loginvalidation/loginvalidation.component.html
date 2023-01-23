@@ -43,9 +43,8 @@
               <span class="text-danger">*&nbsp;</span>password
             </label>
             <input type="text" class="form-control " autocomplete="off" name="password" #password="ngModel"
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-              [(ngModel)]="model.password" required
-              [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
+              pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" [(ngModel)]="model.password"
+              required [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
             <small *ngIf="!password.valid && (password.touched || password.dirty)">
               <small class="text-danger" *ngIf="password.errors?.['required']">
                 password is required
