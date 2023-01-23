@@ -8,7 +8,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginvalidationComponent implements OnInit {
   model: any = {};
-  showPassword: boolean =false;
   constructor() { }
 
   ngOnInit(): void {

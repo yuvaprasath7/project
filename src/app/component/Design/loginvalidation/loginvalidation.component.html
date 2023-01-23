@@ -44,17 +44,9 @@
             <label [ngClass]="!password.valid && (password.touched || password.dirty)?'text-danger':''">
               <span class="text-danger">*&nbsp;</span>password
             </label>
-            <input type="password"  [type]="showPassword ? 'text' : 'password'"  id="password-field" class="form-control  pwd-control  position-relative  " autocomplete="off" name="password" #password="ngModel"
+            <input type="password"    id="password-field" class="form-control  pwd-control  position-relative  " autocomplete="off" name="password" #password="ngModel"
               pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" [(ngModel)]="model.password"
               required [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
-              <div class="eyeicone">
-                <i alt="show" class="fa fa-eye" aria-hidden="true"
-                (click)="showPassword = !showPassword"
-                [class.hide]="showPassword"></i>
-                <i alt="hide" class="fa fa-eye-slash" aria-hidden="true"
-                (click)="showPassword = !showPassword"
-                [class.hide]="!showPassword"></i>
-              </div>
               <div class=" position-absolute top-1 ">
                 <span *ngIf="!password.valid && (password.touched || password.dirty)">
                   <span class="text-danger" *ngIf="password.errors?.['required']">

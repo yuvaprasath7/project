@@ -101,14 +101,7 @@
             pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,16}"
             [(ngModel)]="model.password" required
             [ngClass]="!password.valid && (password.touched || password.dirty)?'is-invalid':''">
-            <div class="eyeicone">
-              <i alt="show" class="fa fa-eye" aria-hidden="true"
-              (click)="showPassword = !showPassword"
-              [class.hide]="showPassword"></i>
-              <i alt="hide" class="fa fa-eye-slash" aria-hidden="true"
-              (click)="showPassword = !showPassword"
-              [class.hide]="!showPassword"></i>
-            </div>
+
           <div class="position-absolute top-9">
             <span *ngIf="!password.valid && (password.touched || password.dirty)">
               <span class="text-danger" *ngIf="password.errors?.['required']">
